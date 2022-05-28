@@ -43,7 +43,6 @@ h1 {
     font-family: var(--font-fraunces);
     color: var(--verdemaisescuro);
     font-weight: 900;
-    font-size: 2rem;
 }
 
 p {
@@ -150,12 +149,13 @@ header>div>h1 {
 }
 
 .transform_stand-out {
-    height: 20rem;
+    height: 60vh;
     margin: 0 auto;
     width: 90%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .transform a {
@@ -250,7 +250,7 @@ footer {
 footer .footer-links {
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 60%;
 }
 
 footer .footer-links a {
@@ -266,7 +266,7 @@ footer .footer-links a:hover {
 footer .footer-social {
     display: flex;
     justify-content: space-between;
-    width: 30%;
+    width: 40%;
 }
 
 footer .footer-social path:hover {
@@ -275,25 +275,7 @@ footer .footer-social path:hover {
     cursor: pointer;
 }
 
-@media only screen and (min-width: 768px) {
-    .desktop {
-        display: block;
-    }
-
-    .mobile {
-        display: none;
-    }
-}
-
-@media only screen and (min-width: 1024px) {
-
-    .desktop {
-        display: block;
-    }
-
-    .mobile {
-        display: none;
-    }
+@media screen and (min-width: 768px) {
 
     body {
         display: grid;
@@ -304,29 +286,28 @@ footer .footer-social path:hover {
             "container-img-stand-out section-stand-out "
             "section-graphic-design section-photografy"
             "client-testimonials client-testimonials"
-            "gallery gallery "
+            "gallery gallery"
             "footer footer";
     }
 
     #menu-ham {
-        display: none;
+        display: block;
     }
 
     header .menu-desktop {
-        display: block;
+        display: none;
     }
 
     header {
         grid-area: header;
     }
 
-    .transform_stand-out {
-        top: -50%;
-        transform: translateY(40%);
-    }
-
     .section-transform {
         grid-area: section-transform;
+    }
+
+    .transform_stand-out {
+        height: 100%;
     }
 
     .container-img-transform {
@@ -349,8 +330,123 @@ footer .footer-social path:hover {
         grid-area: section-photografy;
     }
 
+    .graphic-photography div h1,
+    p {
+        font-size: 1rem;
+    }
+
+    .graphic-photography div p {
+        margin-top: 1rem;
+        font-size: .7rem;
+    }
+
     .client-testimonials {
         grid-area: client-testimonials;
+        height: 90vh;
+    }
+
+    .row {
+        display: flex;
+    }
+
+    .desktop {
+        display: block;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .gallery {
+        grid-area: gallery;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    footer .footer-links {
+        width: 30%;
+    }
+
+    footer .footer-social {
+        width: 20%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .desktop {
+        display: block;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "header header"
+            "section-transform container-img-transform"
+            "container-img-stand-out section-stand-out "
+            "section-graphic-design section-photografy"
+            "client-testimonials client-testimonials"
+            "gallery gallery"
+            "footer footer";
+    }
+
+    #menu-ham {
+        display: none;
+    }
+
+    header .menu-desktop {
+        display: block;
+    }
+
+    header {
+        grid-area: header;
+    }
+
+    .transform_stand-out {
+        width: 50%;
+    }
+
+    .section-transform {
+        grid-area: section-transform;
+    }
+
+    .container-img-transform {
+        grid-area: container-img-transform;
+    }
+
+    .container-img-stand-out {
+        grid-area: container-img-stand-out;
+    }
+
+    .stand-out {
+        grid-area: section-stand-out;
+    }
+
+    .graphic-photography div p {
+        font-size: 1rem;
+    }
+
+    .graphic-design {
+        grid-area: section-graphic-design;
+    }
+
+    .photografy {
+        grid-area: section-photografy;
+    }
+
+    .client-testimonials {
+        grid-area: client-testimonials;
+        height: 90vh;
     }
 
     .row {
@@ -373,6 +469,6 @@ footer .footer-social path:hover {
     }
 
     footer .footer-social {
-        width: 10%;
+        width: 15%;
     }
 }
